@@ -1,0 +1,46 @@
+# Nmap 7.95 scan initiated Mon Jun 23 05:03:37 2025 as: /usr/lib/nmap/nmap -sS -sC -sV -o results.txt 192.168.0.106/24
+Nmap scan report for 192.168.0.1
+Host is up (0.0070s latency).
+Not shown: 996 closed tcp ports (reset)
+PORT     STATE SERVICE    VERSION
+23/tcp   open  telnet     BusyBox telnetd 1.14.0 or later (TP-LINK router telnetd)
+53/tcp   open  tcpwrapped
+| dns-nsid: 
+|   id.server: dns3
+|_  bind.version: PowerDNS Recursor 4.1.11
+80/tcp   open  http       TP-LINK WAP http config
+|_http-title: Site doesn't have a title (text/html; charset=utf-8).
+1900/tcp open  upnp       Portable SDK for UPnP devices 1.6.19 (Linux 3.10.14; UPnP 1.0)
+MAC Address: 40:3F:8C:CE:EE:12 (TP-Link Technologies)
+Service Info: OS: Linux; Devices: broadband router, WAP; CPE: cpe:/o:linux:linux_kernel:3.10.14
+
+Nmap scan report for 192.168.0.100
+Host is up (0.00032s latency).
+Not shown: 996 filtered tcp ports (no-response)
+PORT     STATE SERVICE         VERSION
+1234/tcp open  http            Node.js Express framework
+|_http-title: Site doesn't have a title (application/json; charset=utf-8).
+|_http-cors: GET POST PUT DELETE PATCH
+5900/tcp open  vnc             VNC (protocol 3.8)
+| vnc-info: 
+|   Protocol version: 3.8
+|   Security types: 
+|_    VNC Authentication (2)
+5985/tcp open  http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+7070/tcp open  ssl/realserver?
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=AnyDesk Client
+| Not valid before: 2024-11-10T13:07:57
+|_Not valid after:  2074-10-29T13:07:57
+MAC Address: E4:C7:67:6B:33:93 (Intel Corporate)
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for 192.168.0.106
+Host is up (0.0000020s latency).
+All 1000 scanned ports on 192.168.0.106 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Jun 23 05:04:02 2025 -- 256 IP addresses (3 hosts up) scanned in 24.98 seconds
