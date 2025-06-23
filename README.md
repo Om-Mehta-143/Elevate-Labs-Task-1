@@ -22,7 +22,6 @@ My mission was clear:
 
 ---
 
-## 🛠 My Hacker Journey Begins...
 
 ### ✅ Step 1: Confirmed Nmap Was Ready
 ```bash
