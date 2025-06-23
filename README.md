@@ -1,74 +1,106 @@
-# Elevate-Labs-Task-1
+<h1 align="center">🚀 ELEVATE LABS – TASK 1: Port Scanning Your Local Network 🔎</h1>
+<h3 align="center"><em>“Every open port is a whisper of vulnerability... only those who listen, hear.”</em></h3>
+<p align="center">— <strong>Om Mehta 🧠</strong></p>
 
-Task 1 -- ELEVATE LABS
+---
 
+## 🎯 Objective
 
-Objective:
-To discover open ports on devices within my local network and assess potential exposure to security risks.
+My mission was clear:
 
+> **Scan. Detect. Analyze. Defend.**  
+> To uncover the unseen pathways — the open ports — on my own local network, learn what services hide behind them, and realize how even silence in cyberspace can scream vulnerabilities 🚨.
 
-Tools Used:
-- Nmap (v7.95)
-- (Wireshark not used in this task)
+---
 
+## 🧰 Tools of the Trade
 
-Steps I Took:
+| 🔧 Tool | 🎯 Purpose |
+|--------|------------|
+| 🛰 Nmap | The legendary port scanner (v7.95, pre-installed on Kali Linux) |
+| 🧪 Wireshark | *(Not used in this mission, but sits ready in my cyber arsenal)* |
 
+---
 
-Installed Nmap:
-I downloaded and installed the latest version of Nmap from the official site using my Kali Linux system, where it's pre-installed by default.
+## 🛠 My Hacker Journey Begins...
 
-Identified My Local IP Range:
-I used the command: ip a
-This showed that my local IP was within the 192.168.0.0/24 subnet, so I decided to scan that full range.
+### ✅ Step 1: Confirmed Nmap Was Ready
+```bash
+nmap --version
 
+🌐 Step 2: Identified My Local IP Range
+bash
+Copy
+Edit
+ip a
+🧭 Result:
+192.168.0.106 on subnet 192.168.0.0/24 — this was my battlefield 🪖
 
-Performed a TCP SYN Scan:
-I ran the following Nmap command to scan all devices on the network: nmap -sS -sC -sV -oN results.txt 192.168.0.106/24
-This performed a SYN scan with default scripts and version detection, and saved the output to results.txt.
+🚀 Step 3: Full SYN Scan with Scripts + Version Detection
+bash
+Copy
+Edit
+nmap -sS -sC -sV -oN results.txt 192.168.0.106/24
+🔥 What this did:
 
+-sS = Stealth SYN scan
 
-Reviewed and Parsed the Results:
-I carefully read through the scan output and noted down which IP addresses had open ports. Here's what I found:
+-sC = Default scripts (check for vulnerabilities, banners, etc.)
 
+-sV = Identify versions of services running
 
+-oN = Save the output (because a real hacker never forgets the evidence 🕵️)
 
+📊 Step 4: The Secrets I Uncovered
+💻 IP Address	🔓 Open Ports	🧩 Services
+192.168.0.1	23, 53, 80, 1900	Telnet, DNS, HTTP, UPnP
+192.168.0.100	1234, 5900, 5985, 7070	Node.js API, VNC, WinRM, AnyDesk SSL
+192.168.0.106	❌ None	(My own machine – fortified like a fortress! 🏰)
 
+🚩 Step 5: Security Analysis (Red Flags Raised)
+⚠ Port 23 – Telnet
+Risk: Unencrypted logins? That’s hacker heaven 😈
 
+Fix: Disable it, use SSH.
 
-IP Address	Open Port
+⚠ Port 5900 – VNC
+Risk: If left unprotected, could be brute-forced.
 
+Fix: Use encryption and strong auth.
 
- 192.168.0.1
-23, 53, 80, 1900
-192.168.0.100
-1234, 5900, 5985, 7070
-192.168.0.106
-None
+⚠ Port 7070 – AnyDesk
+Risk: Could be an entry point for remote attackers.
 
+Fix: Monitor heavily and authenticate tightly.
 
+⚠ Port 1900 – UPnP
+Risk: Devices might be accidentally exposed.
 
-Investigated Services on Each Port:
-I noted what services Nmap detected on each open port:
-192.168.0.1 had Telnet, DNS, HTTP (TP-LINK router config), and UPnP services.
-192.168.0.100 was running services like Node.js Express API, VNC remote desktop, WinRM, and an AnyDesk SSL service.
+Fix: Disable UPnP unless absolutely needed.
 
-Assessed Security Risks:
-I researched and identified the following risks:
-Port 23 (Telnet) - High risk due to plaintext login.
-Port 5900 (VNC) - Vulnerable to brute-force if not encrypted.
-Port 7070 (AnyDesk SSL) - Could be misused for remote access.
-UPnP (Port 1900) - Known for exposing devices unintentionally.
+🧾 Step 6: Preserved the Evidence
+🗂 results.txt contains the complete scan logs.
 
+Because in cyber — if it’s not documented, it didn’t happen. 🧠
 
-Saved and Backed Up the Results:
-I saved the scan results to results.txt … 
+🎓 What I Learned
+🌐 Every IP is a story. Every port is a doorway.
 
-What I Learned:
-Most of my network devices expose ports/services that could be abused if not secured.
-Tools like Nmap are powerful for network discovery and risk evaluation.
-It's crucial to audit and limit open services on internal devices.
+🔍 Network scanning is not about curiosity — it’s about control.
 
+🧠 I’ve learned to see the invisible, and I’m only getting started.
 
-Thank You !!! ….
--By Om Mehta
+🧠 Final Reflection
+This task wasn’t about running a tool.
+It was about thinking like a hacker, and acting like a defender.
+
+🔒 Every exposed port is a risk.
+📢 Every secure machine is a win.
+⚔ And every scan makes me sharper.
+
+👨‍💻 About Me
+Om Mehta
+🌟 Cybersecurity Intern @ Elevate Labs
+🧠 Ethical Hacker-in-Training
+🎯 Obsessed with networks, packets, and power
+🧩 Building the future, one scan at a time...!!!
